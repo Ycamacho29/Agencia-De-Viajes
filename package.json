@@ -1,0 +1,18 @@
+{
+  "name": "agencias_viajes",
+  "version": "1.0.0",
+  "description": "Proyecto de Pagina de Web para una Agencias de Viajes",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "type": "module",
+  "author": "Yorwin Camacho",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
