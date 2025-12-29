@@ -20,6 +20,22 @@ const app = express();
 // Definir Puerto
 const port = process.env.PORT || 4000;
 
+// Habilitar El Motor de Plantillas (PUG)
+app.set('view engine', 'pug');
+
+// Obtener el año actual
+app.use((request, response, next) => {
+    const year = new Date();
+
+    response.locals.actualYear = year.getFullYear();
+    response.locals.nombreSitio = "Agencia de Viajes";
+
+    next();
+});
+
+// Definir la Carpeta Publica
+app.use(express.static('public'));
+
 // Agregar Router
 app.use("/", router);
 
