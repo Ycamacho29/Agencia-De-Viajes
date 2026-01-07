@@ -14,8 +14,14 @@ app.listen(port, () => {
 // Sintaxis con Imports y Exports
 import express from 'express';
 import router from './routes/index.js';
+import db from './config/db.js';
 
 const app = express();
+
+// Conectar a la Base de Datos
+db.authenticate()
+    .then(() => { console.log('Base de Datos Conectada')})
+    .catch(error => {console.error(error)});
 
 // Definir Puerto
 const port = process.env.PORT || 4000;
@@ -32,6 +38,9 @@ app.use((request, response, next) => {
 
     next();
 });
+
+// Agregar Body Parser para leer los Datos de los Formularios
+app.use(express.urlencoded({extended: true}));
 
 // Definir la Carpeta Publica
 app.use(express.static('public'));

@@ -1,6 +1,37 @@
 extends ./layouts/index
 
+block slider
+    div(class="slider")
+        h1 Rio de Janeiro
+        em aventura
+
 block contenido
     main(class="container mt-5")
-        div(class="row")
-            h1= pagina 
+        h2(class="text-center mb-5") Sobre Nosotros
+        div(class="row mb-5")
+            div(class="col-md-6")
+                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+                    |standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    |a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
+                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+                    |standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                    |a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting
+               
+            div(class="col-md-6")
+                img(class="img-fluid" src="/img/inicio_nosotros.jpg", alt="Imagen sobre nosotros")
+
+            include ./layouts/bloque_viajes
+
+    div(class="descuento")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6")
+                    div(class="contenido")
+                        h3 5% de Descuento
+                        p(class="titulo") Viaje a Canada
+                        p(class="fecha") 20 de Marzo de 2026 - 28 de Marzo de 2026
+                        p(class="precio") 2500 USD
+
+    div(class="container")
+        h2(class="mt-5 text-center") Testimonios
+        include ./layouts/bloque_testimonios

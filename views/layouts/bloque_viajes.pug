@@ -1,0 +1,32 @@
+div(class="row proximos-viajes")
+    each viaje in viajes 
+        div(class="col-md-6 col-lg-4 mb-4")
+            div(class="card")
+                img(class="card-img-top" src=`img/destinos_${viaje.imagen}.jpg`)
+                div(class="card-body")
+                    h2= viaje.titulo
+                    p
+                        svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewbox='0 0 24 24' fill='none' stroke='#000000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z')
+                            path(d='M16 3l0 4')
+                            path(d='M8 3l0 4')
+                            path(d='M4 11l16 0')
+                            path(d='M8 15h2v2h-2z')
+                        | #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                    
+                    p
+                        svg(xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewbox='0 0 24 24' fill='none' stroke='#000000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round')
+                            path(d='M8.56 3.69a9 9 0 0 0 -2.92 1.95')
+                            path(d='M3.69 8.56a9 9 0 0 0 -.69 3.44')
+                            path(d='M3.69 15.44a9 9 0 0 0 1.95 2.92')
+                            path(d='M8.56 20.31a9 9 0 0 0 3.44 .69')
+                            path(d='M15.44 20.31a9 9 0 0 0 2.92 -1.95')
+                            path(d='M20.31 15.44a9 9 0 0 0 .69 -3.44')
+                            path(d='M20.31 8.56a9 9 0 0 0 -1.95 -2.92')
+                            path(d='M15.44 3.69a9 9 0 0 0 -3.44 -.69')
+                            path(d='M9 12l2 2l4 -4')
+                        | #{viaje.disponibles} Diponibles
+
+                    p= viaje.descripcion
+
+                    a(href=`viajes/${viaje.slug}`, class="btn btn-success btn-block") Mas Informacion
